@@ -5,7 +5,6 @@ import { NavigationComponent } from './component/navigation/navigation.component
 import { TravelComponent } from './component/travel/travel.component';
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
-import {HttpModule} from '@angular/http';
 import { FleetComponent } from './component/fleet/fleet.component';
 import {FormsModule} from '@angular/forms';
 import { PilotService } from './service/pilot.service';
@@ -16,9 +15,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { ViewportScroller } from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { PlanetListComponent } from './component/travel/planet-list/planet-list.component';
+import { PlanetDetailsComponent } from './component/travel/planet-details/planet-details.component';
 
 
 @NgModule({
@@ -26,13 +26,14 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     AppComponent,
     NavigationComponent,
     FleetComponent,
-    TravelComponent
+    TravelComponent,
+    PlanetListComponent,
+    PlanetDetailsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HttpModule,
     FormsModule,
     MatCardModule,
     MatGridListModule,
