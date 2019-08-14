@@ -1,0 +1,29 @@
+h2 {
+  text-align: center;
+  color: #fff;
+  padding: 1em;
+}
+nav {
+  background-color: #454bfa;
+  width: 100%;
+  padding-bottom: 2em;
+}
+button {
+  color: #fff;
+  border: none;
+  border-bottom: 2px #ffe371 solid;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  display: block;
+  padding: 0.5em;
+}
+
+button:hover {
+  letter-spacing: 3px;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}

@@ -1,0 +1,126 @@
+
+
+input[type=text] {
+  padding: 1em;
+  border: none;
+  background-color: #e5e5e5;
+  margin: 1em;
+  width: 16em;
+}
+input[type=submit], #save {
+  background-color: #454bfa;
+  color: white;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-right: 1em;
+  width: 10em;
+}
+input[type=submit]:hover, #save:hover{
+  background-color: rgba(69, 75, 250, 0.91);
+  letter-spacing: 3px;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+hr {
+  border: none;
+  border: 0.5px solid rgba(204, 204, 204, 0.39);
+
+}
+.rightContainer hr {
+  margin-top: 1em;
+}
+.leftContainer {
+  width: 60vh;
+  float: left;
+}
+#tempText {
+  display: block;
+  text-align: center;
+  color: gray;
+  margin: 2em;
+}
+.rightContainer {
+  float: right;
+  width: 140vh;
+  margin: 0 auto;
+}
+li {
+  list-style: none;
+  font-weight: bold;
+  float: left;
+  width: 100%;
+  margin: 0.5em;
+  font-size: 16px;
+
+}
+li button {
+  background-color: transparent;
+  color: #454bfa;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 5em;
+}
+li button:hover{
+  letter-spacing: 3px;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+#fleetTitle {
+  font-size: 21px;
+  font-weight: bold;
+  margin: 1em;
+  float: left;
+}
+#save {
+  display: block;
+  left: 0;
+}
+
+.vl {
+  border-left: 6px solid #454bfa;
+  height: 79vh;
+  float: left;
+  margin-right: 1em;
+  box-shadow: -2px 0px 34px -13px rgba(0,0,0,0.64);
+}
+#details {
+  font-size: 16px;
+  padding: 5px;
+}
+#details b {
+  font-size: 14px;
+  font-weight: unset;
+  color: #bfbfbf;
+}
+#remove {
+  float: right;
+  margin-right: 1em;
+  margin-top: 3em;
+}
+.rightContainer li {
+  padding-bottom: 1em;
+  margin-left: -1em;
+  margin-right: 4em;
+  margin-top: 1em;
+  padding: 1em;
+  box-shadow: 0px 0px 10px -6px rgba(0,0,0,0.54);
+}
+.rightContainer li:hover {
+  background-color: #f7f7f7;
+}
+.rightContainer ul {
+  margin: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 60vh;
+}

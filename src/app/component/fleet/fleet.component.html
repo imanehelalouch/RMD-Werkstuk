@@ -1,0 +1,93 @@
+<div class="leftContainer">
+  <input type="text" class="form-control" [(ngModel)]="searchName" placeholder="starship name" />
+  <input type="submit" class="form-control" value="search" (click)="searchStarship()" />
+  <input type="submit" class="form-control" value="reset" (click)="resetSearchList()" />
+  <hr>
+  <p id="tempText" *ngIf="searchedStarships.length == 0">No search results</p>
+
+  <div class="searchedStarships">
+
+    <p id="tempText" *ngIf="searchedStarships.length > 0">{{searchedStarships.length}} results</p>
+
+    <ul *ngIf="searchedStarships.length > 0">
+      <li *ngFor="let starship of searchedStarships">
+        <p><button class="form-control" (click)="selectStarship(starship)"> add </button>{{starship.name}}</p>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+
+<!--
+      <mat-list *ngIf="searchedStarships.length > 0">
+        <h3 mat-subheader>Starships</h3>
+        <mat-list-item *ngFor="let starship of searchedStarships">
+          <h4 mat-line><b>Name:</b> {{starship.name}}</h4>
+          <p mat-line><b>Consumables:</b> {{starship.consumables}} </p>
+          <p mat-line><b>Manufacturer: </b>{{starship.manufacturer}} </p>
+          <p>
+            <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <b>Pilots</b>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    ( {{starship.pilots.length}} )
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+          <p *ngFor="let pilot of starship.pilots">
+            {{pilot.name}}
+          </p>
+          </mat-expansion-panel>
+          </mat-accordion>
+          </p>
+          <button class="form-control" (click)="selectStarship(starship)"> ADD </button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+      </mat-list>
+
+    </mat-grid-tile>
+-->
+
+
+
+<div class="rightContainer">
+  <div class="vl"></div>
+  <p id="fleetTitle">List of Fleet</p>
+  <button id="save"  >save</button>
+  <hr>
+  <p id="tempText" *ngIf="selectedStarships.length == 0">No starships added</p>
+  <p id="tempText" *ngIf="selectedStarships.length > 0">{{selectedStarships.length}} starship(s)</p>
+
+  <ul>
+    <li *ngFor="let starship of selectedStarships" >
+      <button id="remove" (click)="removeStartship(starship)">remove</button>
+      <p id="details"><b>Name:</b> {{starship.name}}</p>
+      <p id="details"><b>Model:</b> {{starship.model}}</p>
+      <p id="details"><b>Manufacturer:</b> {{starship.manufacturer}}</p>
+      <p id="details"><b>Consumables:</b> {{starship.consumables}}</p>
+      <p id="details"><b>Passengers:</b> {{starship.passengers}}</p>
+
+      <div *ngIf="starship.pilots.length > 0">
+      <p>Pilots:</p>
+      <p *ngFor="let pilot of starship.pilots" id="details">
+        {{pilot.name}}
+      </p>
+      </div>
+    </li>
+
+  </ul>
+
+
+</div>
+
+
+
+
+

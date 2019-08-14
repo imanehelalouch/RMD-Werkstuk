@@ -1,0 +1,10 @@
+<div class="leftContainer">
+<app-planet-list (planetSelected)="planetSelected($event)">
+
+</app-planet-list>
+</div>
+<div class="rightContainer">
+<app-planet-details [selectedPlanet]="selectedPlanet">
+
+</app-planet-details>
+</div>

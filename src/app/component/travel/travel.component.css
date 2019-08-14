@@ -1,0 +1,50 @@
+.vl {
+  border-left: 6px solid #454bfa;
+  height: 79vh;
+  float: left;
+  margin-right: 1em;
+  box-shadow: -2px 0px 34px -13px rgba(0,0,0,0.64);
+}
+
+.leftContainer {
+  background-color: #f4f4f4;
+  margin: 0 auto;
+  width: 50vh;
+  height: 79vh;
+  float: left;
+
+}
+.rightContainer {
+  width: 200vh;
+  height: 79vh;
+  margin: 0 auto;
+}
+.planetListItem {
+  background-color: white;
+  width: 75%;
+  margin: 1.5em;
+  box-shadow: 0px 0px 10px -6px rgba(0,0,0,0.54);
+  padding: 2em;
+  cursor: pointer;
+}
+.planetListItem:hover {
+  background-color: #f3f3f3;
+  letter-spacing: 3px;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+.leftContainer p {
+  font-weight: bold;
+font-size: 18px;
+}
+.leftContainer p span {
+  color: #37aa00;
+  font-size: 15px;
+  float: right;
+}
+.rightContainer p {
+  text-align: center;
+}

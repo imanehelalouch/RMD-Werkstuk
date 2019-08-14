@@ -1,0 +1,17 @@
+.vl {
+  border-left: 6px solid #454bfa;
+  height: 79vh;
+  float: left;
+  margin-right: 1em;
+  box-shadow: -2px 0px 34px -13px rgba(0,0,0,0.64);
+}
+
+.rightContainer {
+  width: 200vh;
+  height: 79vh;
+  margin: 0 auto;
+}
+
+.rightContainer p {
+  text-align: center;
+}
