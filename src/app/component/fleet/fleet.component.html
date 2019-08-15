@@ -5,7 +5,11 @@
   <hr>
   <p id="tempText" *ngIf="searchedStarships.length == 0">No search results</p>
 
-  <div class="searchedStarships">
+  <div  *ngIf="isLoading == true">
+    <div class="loader"></div>
+  </div>
+
+  <div class="searchedStarships" *ngIf="isLoading == false">
 
     <p id="tempText" *ngIf="searchedStarships.length > 0">{{searchedStarships.length}} results</p>
 

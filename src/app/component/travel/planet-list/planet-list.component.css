@@ -33,7 +33,44 @@
   font-size: 18px;
 }
 .leftContainer p span {
-  color: #37aa00;
-  font-size: 15px;
-  float: right;
+
 }
+
+.visited {
+  color: #37aa00;
+  float: right;
+
+  height: 15px;
+  width: 15px;
+  background-color: #37aa00;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.unvisited {
+  color: red;
+  float: right;
+
+  height: 15px;
+  width: 15px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+.loader {
+  margin-top: 2em;
+  border: 5px solid white; /* Light grey */
+  border-top: 5px solid #b6b7b8; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+

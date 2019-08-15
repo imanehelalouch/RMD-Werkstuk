@@ -1,11 +1,11 @@
 <div class="vl"></div>
 <div class="rightContainer" *ngIf="selectedPlanet">
 
-  <p><span>name:</span><br>{{selectedPlanet.name}}</p>
+  <p>{{selectedPlanet.name}}</p>
   <p><span>climate:</span><br>{{selectedPlanet.climate}}</p>
   <p><span>terrain:</span><br>{{selectedPlanet.terrain}}</p>
   <p><span>population:</span><br>{{selectedPlanet.population}}</p>
 
-  <button (click)="visitPlanet()">Visited</button>
+  <button *ngIf="myFleet.id !== undefined" (click)="visitPlanet(selectedPlanet)">Visited</button>
 </div>
 

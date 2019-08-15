@@ -1,7 +1,15 @@
 <div class="leftContainer">
-<div class="planetListItem" *ngFor="let planet of allPlanets" (click)="selectPlanet(planet)">
-  <p>{{planet.name}}<span>visited</span></p>
+<div class="planetListItem" *ngFor="let planet of allPlanets" (click)="selectPlanet(planet)"  >
+
+  <div *ngIf="isLoading == false">
+  <p>{{planet.name}}<span [ngClass]="{visited: hasBeeenVisited(planet), unvisited: !hasBeeenVisited(planet)}"></span></p>
+  </div>
 
 </div>
+
+  <div *ngIf="isLoading == true" >
+  <div class="loader"></div>
+  </div>
+
 </div>
 

@@ -17,20 +17,23 @@ export class FleetComponent implements OnInit {
   searchedStarships: Starship[] = [];
   changeText = true;
   myFleet: Fleet = new Fleet();
+  private isLoading = false;
 
 
   constructor(private starshipService: StarshipService, private pilotService: PilotService, private fleetService: FleetService) {
     this.myFleet.name = 'Test fleet';
     this.loadFleet();
-  this.getAllStarships();
+    this.getAllStarships();
   }
 
-  getAllStarships(){
+  getAllStarships() {
+    this.isLoading = true;
     this.searchedStarships = [];
     this.starshipService.getAll().subscribe(
       (response: any) => {
         if (response.results.length > 0) {
           response.results.forEach(starship => {
+            this.isLoading = false;
             const initStarship: Starship = {
               'name': starship.name, 'model': starship.model,
               'manufacturer': starship.manufacturer, 'consumables': starship.consumables, 'passengers': starship.passengers, 'pilots': []
@@ -51,9 +54,11 @@ export class FleetComponent implements OnInit {
       },
       (error) => {
         console.log(error);
+        this.isLoading = false;
       }
     );
   }
+
   searchStarship() {
     this.searchedStarships = [];
     this.starshipService.searchByName(this.searchName).subscribe(
@@ -150,7 +155,7 @@ export class FleetComponent implements OnInit {
     this.fleetService.updateFleet(data);
   }
 
-  delete(){
+  delete() {
     this.fleetService.deleteCoffeeOrder(this.myFleet);
   }
 

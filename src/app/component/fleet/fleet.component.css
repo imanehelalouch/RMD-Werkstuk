@@ -7,6 +7,9 @@ input[type=text] {
   margin: 1em;
   width: 16em;
 }
+input[type=text]:nth-child(2) {
+  width: 70em;
+}
 input[type=submit], #save {
   background-color: #454bfa;
   color: white;
@@ -75,15 +78,10 @@ li button:hover{
   -o-transition: all .2s ease-in;
   transition: all .2s ease-in;
 }
-#fleetTitle {
-  font-size: 21px;
-  font-weight: bold;
-  margin: 1em;
-  float: left;
-}
 #save {
   display: block;
   left: 0;
+  float: right;
 }
 
 .vl {
@@ -123,4 +121,18 @@ li button:hover{
   overflow: scroll;
   overflow-x: hidden;
   height: 60vh;
+}
+.loader {
+  margin-top: 2em;
+  border: 5px solid white; /* Light grey */
+  border-top: 5px solid #b6b7b8; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
