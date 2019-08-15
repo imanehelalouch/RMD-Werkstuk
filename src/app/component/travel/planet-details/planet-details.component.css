@@ -1,17 +1,46 @@
 .vl {
-  border-left: 6px solid #454bfa;
-  height: 79vh;
+  border-left: 6px solid #ffe371;
+  height: 100%;
   float: left;
   margin-right: 1em;
   box-shadow: -2px 0px 34px -13px rgba(0,0,0,0.64);
 }
 
 .rightContainer {
-  width: 200vh;
-  height: 79vh;
-  margin: 0 auto;
+  height: 40vh;
+  background-color: white;
+  box-shadow: -2px 0px 24px -13px rgba(0,0,0,0.64);
 }
 
 .rightContainer p {
-  text-align: center;
+  text-align: left;
+  padding: 0.5em;
+  font-size: 20px;
+}
+.rightContainer p:first-child {
+  font-size: 25px;
+  font-weight: bold;
+}
+.rightContainer button {
+  background-color: #454bfa;
+  color: white;
+  border: none;
+  padding: 1em;
+  margin-top: 2em;
+  cursor: pointer;
+  width: 10em;
+  float: left;
+}
+.rightContainer button:hover{
+  letter-spacing: 3px;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+.rightContainer p span {
+  font-size: 15px;
+  color: #9c9c9c;
+  font-weight: normal;
 }

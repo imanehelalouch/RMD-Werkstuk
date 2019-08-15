@@ -19,7 +19,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { PlanetListComponent } from './component/travel/planet-list/planet-list.component';
 import { PlanetDetailsComponent } from './component/travel/planet-details/planet-details.component';
-
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { PlanetDetailsComponent } from './component/travel/planet-details/planet
     MatButtonModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     RouterModule.forRoot([
         {
           path: 'fleet-component',

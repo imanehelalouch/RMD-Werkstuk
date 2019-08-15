@@ -1,7 +1,7 @@
 <div class="leftContainer">
-  <input type="text" class="form-control" [(ngModel)]="searchName" placeholder="starship name" />
-  <input type="submit" class="form-control" value="search" (click)="searchStarship()" />
-  <input type="submit" class="form-control" value="reset" (click)="resetSearchList()" />
+  <input type="text" class="form-control" [(ngModel)]="searchName" placeholder="starship name"/>
+  <input type="submit" class="form-control" value="search" (click)="searchStarship()"/>
+  <input type="submit" class="form-control" value="reset" (click)="resetSearchList()"/>
   <hr>
   <p id="tempText" *ngIf="searchedStarships.length == 0">No search results</p>
 
@@ -11,7 +11,9 @@
 
     <ul *ngIf="searchedStarships.length > 0">
       <li *ngFor="let starship of searchedStarships">
-        <p><button class="form-control" (click)="selectStarship(starship)"> add </button>{{starship.name}}</p>
+        <p>
+          <button class="form-control" (click)="selectStarship(starship)"> add</button>
+          {{starship.name}}</p>
 
       </li>
 
@@ -56,17 +58,18 @@
 -->
 
 
-
 <div class="rightContainer">
   <div class="vl"></div>
-  <p id="fleetTitle">List of Fleet</p>
-  <button id="save"  >save</button>
+  <input type="text"  [(ngModel)]="myFleet.name" >
+  <button id="save" (click)="createOrSaveFleet()">save</button>
+  <button id="save" (click)="delete()">delete fleet</button>
+
   <hr>
-  <p id="tempText" *ngIf="selectedStarships.length == 0">No starships added</p>
-  <p id="tempText" *ngIf="selectedStarships.length > 0">{{selectedStarships.length}} starship(s)</p>
+  <p id="tempText" *ngIf="myFleet.starships.length == 0">No starships added</p>
+  <p id="tempText" *ngIf="myFleet.starships.length > 0">{{myFleet.starships.length}} starship(s)</p>
 
   <ul>
-    <li *ngFor="let starship of selectedStarships" >
+    <li *ngFor="let starship of myFleet.starships">
       <button id="remove" (click)="removeStartship(starship)">remove</button>
       <p id="details"><b>Name:</b> {{starship.name}}</p>
       <p id="details"><b>Model:</b> {{starship.model}}</p>
@@ -75,10 +78,10 @@
       <p id="details"><b>Passengers:</b> {{starship.passengers}}</p>
 
       <div *ngIf="starship.pilots.length > 0">
-      <p>Pilots:</p>
-      <p *ngFor="let pilot of starship.pilots" id="details">
-        {{pilot.name}}
-      </p>
+        <p>Pilots:</p>
+        <p *ngFor="let pilot of starship.pilots" id="details">
+          {{pilot.name}}
+        </p>
       </div>
     </li>
 

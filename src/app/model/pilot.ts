@@ -3,7 +3,7 @@ export class Pilot {
   name: string;
   gender: string;
 
-  constructor(values: Object = {}) {
-    Object.assign(this, values);
+    constructor(values: Object = {}) {
+      Object.assign(this, values);
   }
 }
