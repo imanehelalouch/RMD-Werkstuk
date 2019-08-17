@@ -113,7 +113,7 @@ export class FleetComponent implements OnInit {
       return correctFleet;
     } else {
       let newFleet = new Fleet();
-      newFleet.name = 'Please select a fleet name';
+      newFleet.name = 'Fleet name';
       return newFleet;
     }
   }
@@ -144,8 +144,7 @@ export class FleetComponent implements OnInit {
     const data: Object = JSON.parse(JSON.stringify(this.myFleet));
     this.fleetService.createFleet(data)
       .then(res => {
-        /*do something here....
-        maybe clear the form or give a success message*/
+
       });
   }
 

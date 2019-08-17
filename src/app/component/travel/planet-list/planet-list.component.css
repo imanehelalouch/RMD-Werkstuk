@@ -61,7 +61,7 @@
 
 .loader {
   margin-top: 2em;
-  border: 5px solid white; /* Light grey */
+  border: 5px solid transparent; /* Light grey */
   border-top: 5px solid #b6b7b8; /* Blue */
   border-radius: 50%;
   width: 20px;

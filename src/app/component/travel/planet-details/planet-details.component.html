@@ -5,7 +5,8 @@
   <p><span>climate:</span><br>{{selectedPlanet.climate}}</p>
   <p><span>terrain:</span><br>{{selectedPlanet.terrain}}</p>
   <p><span>population:</span><br>{{selectedPlanet.population}}</p>
-
-  <button *ngIf="myFleet.id !== undefined" (click)="visitPlanet(selectedPlanet)">Visited</button>
+  <div *ngIf="hasBeeenVisited(selectedPlanet) === !true">
+  <button *ngIf="myFleet.id !== undefined" (click)="visitPlanet(selectedPlanet)">I have already visited this planet</button>
+  </div>
 </div>
 

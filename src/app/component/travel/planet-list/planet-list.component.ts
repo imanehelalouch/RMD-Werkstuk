@@ -22,21 +22,14 @@ export class PlanetListComponent implements OnInit {
     this.loadFleet();
   }
 
-  /**
-   * With this method I Want to blabla
-   * Input: Nothing
-   * Output: Void
-   */
+
   loadFleet() {
     this.fleetService
       .getFleets()
       .subscribe(res => (this.myFleet = this.transformFirestoreFleetToCustom(res)));
   }
 
-  /**
-   * Method to transform a firestore response into a fleet objct
-   * @param data
-   */
+
   transformFirestoreFleetToCustom(data): Fleet {
     if (data.length > 0) {
       this.myFleet.id = data[0].payload.doc.id;

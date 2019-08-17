@@ -7,7 +7,6 @@
 }
 
 .rightContainer {
-  height: 40vh;
   background-color: white;
   box-shadow: -2px 0px 24px -13px rgba(0,0,0,0.64);
 }
@@ -28,8 +27,9 @@
   padding: 1em;
   margin-top: 2em;
   cursor: pointer;
-  width: 10em;
   float: left;
+  width: 30em;
+  font-size: 17px;
 }
 .rightContainer button:hover{
   letter-spacing: 3px;

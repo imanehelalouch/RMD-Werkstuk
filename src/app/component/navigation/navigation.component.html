@@ -11,3 +11,6 @@
   </nav>
 
 <router-outlet></router-outlet>
+<div class="container" *ngIf="showText()">
+  <p>{{introText1}}<br>{{introText2}}<br>{{introText3}}<br></p>
+</div>
