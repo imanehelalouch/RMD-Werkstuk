@@ -32,7 +32,7 @@ export class FleetService {
       .set(data);
   }
 
-  deleteCoffeeOrder(data) {
+  deleteFleet(data) {
     return this.firestore
       .collection('fleets')
       .doc(data.id)

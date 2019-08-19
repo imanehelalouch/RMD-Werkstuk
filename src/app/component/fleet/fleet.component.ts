@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Pilot} from 'src/app/model/pilot';
+import {People} from 'src/app/model/people';
 import {Starship} from 'src/app/model/starship';
 import {StarshipService} from 'src/app/service/starship.service';
-import {PilotService} from 'src/app/service/pilot.service';
+import {PeopleService} from 'src/app/service/people.service';
 import {Fleet} from '../../model/fleet';
 import {FleetService} from '../../service/fleet.service';
 
@@ -12,15 +12,14 @@ import {FleetService} from '../../service/fleet.service';
   styleUrls: ['./fleet.component.css']
 })
 export class FleetComponent implements OnInit {
-  pilot: Pilot;
+  pilot: People;
   searchName: String;
   searchedStarships: Starship[] = [];
-  changeText = true;
   myFleet: Fleet = new Fleet();
   private isLoading = false;
 
 
-  constructor(private starshipService: StarshipService, private pilotService: PilotService, private fleetService: FleetService) {
+  constructor(private starshipService: StarshipService, private pilotService: PeopleService, private fleetService: FleetService) {
     this.myFleet.name = 'Test fleet';
     this.loadFleet();
     this.getAllStarships();
@@ -41,7 +40,7 @@ export class FleetComponent implements OnInit {
             if (starship.pilots.length > 0) {
               starship.pilots.forEach(pilot => {
                 this.pilotService.getPilotByUrl(pilot).subscribe(
-                  (responsePilot: Pilot) => {
+                  (responsePilot: People) => {
                     initStarship.pilots.push(responsePilot);
                   }
                 );
@@ -72,7 +71,7 @@ export class FleetComponent implements OnInit {
             if (starship.pilots.length > 0) {
               starship.pilots.forEach(pilot => {
                 this.pilotService.getPilotByUrl(pilot).subscribe(
-                  (responsePilot: Pilot) => {
+                  (responsePilot: People) => {
                     initStarship.pilots.push(responsePilot);
                   }
                 );
@@ -106,13 +105,13 @@ export class FleetComponent implements OnInit {
   transformFirestoreFleetToCustom(data): Fleet {
     if (data.length > 0) {
       this.myFleet.id = data[0].payload.doc.id;
-      console.log('my payload id : ' + data[0].payload.doc.id);
-      let correctFleet = data[0].payload.doc.data();
+      // console.log('my payload id : ' + data[0].payload.doc.id);
+      const correctFleet = data[0].payload.doc.data();
       correctFleet.id = data[0].payload.doc.id;
-      console.log();
+      // console.log();
       return correctFleet;
     } else {
-      let newFleet = new Fleet();
+      const newFleet = new Fleet();
       newFleet.name = 'Fleet name';
       return newFleet;
     }
@@ -139,7 +138,7 @@ export class FleetComponent implements OnInit {
   }
 
   save() {
-    console.log(this.myFleet);
+    // console.log(this.myFleet);
     // Save in Google Firestore
     const data: Object = JSON.parse(JSON.stringify(this.myFleet));
     this.fleetService.createFleet(data)
@@ -149,13 +148,13 @@ export class FleetComponent implements OnInit {
   }
 
   update() {
-    console.log(this.myFleet);
+    // console.log(this.myFleet);
     const data: Object = JSON.parse(JSON.stringify(this.myFleet));
     this.fleetService.updateFleet(data);
   }
 
   delete() {
-    this.fleetService.deleteCoffeeOrder(this.myFleet);
+    this.fleetService.deleteFleet(this.myFleet);
   }
 
   ngOnInit() {

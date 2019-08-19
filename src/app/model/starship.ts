@@ -1,4 +1,4 @@
-import { Pilot } from './pilot';
+import { People } from './people';
 
 export class Starship {
   name: String;
@@ -6,7 +6,7 @@ export class Starship {
   manufacturer: string;
   consumables: string;
   passengers: string;
-  pilots?: Pilot[] = [];
+  pilots?: People[] = [];
 
   constructor(values: Object = {}) {
     this.pilots = [];

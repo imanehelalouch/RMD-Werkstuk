@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PilotService } from 'src/app/service/pilot.service';
-import { Pilot } from 'src/app/model/pilot';
+import { PeopleService } from 'src/app/service/people.service';
+import { People } from 'src/app/model/people';
 import {Planet} from '../../model/planet';
 
 

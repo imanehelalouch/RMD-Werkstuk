@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { ViewportScroller } from '@angular/common';
+import {Component} from '@angular/core';
+import {ViewportScroller} from '@angular/common';
+import {PeopleService} from './service/people.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,8 @@ import { ViewportScroller } from '@angular/common';
 })
 export class AppComponent {
   title = 'Imane-Helalouch';
- 
-  
+
+
+
 
 }

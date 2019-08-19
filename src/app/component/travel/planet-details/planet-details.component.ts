@@ -31,19 +31,19 @@ export class PlanetDetailsComponent implements OnInit {
   transformFirestoreFleetToCustom(data): Fleet {
     if (data.length > 0) {
       this.myFleet.id = data[0].payload.doc.id;
-      console.log('my payload id : ' + data[0].payload.doc.id);
-      let correctFleet = data[0].payload.doc.data();
+      // console.log('my payload id : ' + data[0].payload.doc.id);
+      const correctFleet = data[0].payload.doc.data();
       correctFleet.id = data[0].payload.doc.id;
       console.log();
       return correctFleet;
     } else {
-      let newFleet = new Fleet();
+      const newFleet = new Fleet();
       newFleet.name = 'Please select a fleet name';
       return newFleet;
     }
   }
 
-  hasBeeenVisited(planet: Planet): boolean {
+  hasBeenVisited(planet: Planet): boolean {
     const indexPlanet = this.myFleet.planets.map(x => x.name).indexOf(planet.name);
     if (indexPlanet !== -1) {
       return true;
@@ -53,7 +53,7 @@ export class PlanetDetailsComponent implements OnInit {
   }
 
   visitPlanet(planet: Planet) {
-    if (!this.hasBeeenVisited(planet)) {
+    if (!this.hasBeenVisited(planet)) {
       this.myFleet.planets.push(planet);
       this.updateFleet();
     }
@@ -61,7 +61,7 @@ export class PlanetDetailsComponent implements OnInit {
   }
 
   updateFleet() {
-    console.log(this.myFleet);
+    // console.log(this.myFleet);
     const data: Object = JSON.parse(JSON.stringify(this.myFleet));
     this.fleetService.updateFleet(data);
   }

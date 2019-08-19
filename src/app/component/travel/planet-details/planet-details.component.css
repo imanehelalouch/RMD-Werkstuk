@@ -11,7 +11,7 @@
   box-shadow: -2px 0px 24px -13px rgba(0,0,0,0.64);
 }
 
-.rightContainer p {
+.rightContainer p, .rightContainer div p {
   text-align: left;
   padding: 0.5em;
   font-size: 20px;
@@ -44,3 +44,4 @@
   color: #9c9c9c;
   font-weight: normal;
 }
+

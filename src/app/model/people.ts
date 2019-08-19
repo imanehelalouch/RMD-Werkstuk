@@ -1,4 +1,4 @@
-export class Pilot {
+export class People {
   id: number;
   name: string;
   gender: string;

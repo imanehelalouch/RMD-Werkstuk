@@ -7,7 +7,7 @@ import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {FleetComponent} from './component/fleet/fleet.component';
 import {FormsModule} from '@angular/forms';
-import {PilotService} from './service/pilot.service';
+import {PeopleService} from './service/people.service';
 import {StarshipService} from './service/starship.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {PlanetListComponent} from './component/travel/planet-list/planet-list.component';
@@ -40,12 +40,11 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
         {
           path: 'travel-component',
           component: TravelComponent
-        }],
-      {anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})
+        }])
 
 
   ],
-  providers: [PilotService, StarshipService],
+  providers: [PeopleService, StarshipService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
